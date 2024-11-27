@@ -38,6 +38,7 @@
             // aspectRatio: 1.777778 // 可选，视频馈送需要的纵横比，(4:3--1.333334, 16:9--1.777778, 1:1--1.0)传递错误的纵横比会导致视频不显示
           },
           (decodedText, decodedResult) => {
+            alert(`${decodedText},${JSON.stringify(decodedResult)}`)
             // do something when code is read
             content.innerHTML =  decodedText
             content2.innerHTML =  decodedResult
@@ -47,6 +48,7 @@
           }
         )
           .catch((err) => {
+            alert(`出错了 ${err}`)
             console.log('扫码错误信息', err)
             // 错误信息处理仅供参考，具体情况看输出！！！
             if (typeof err == 'string') {
