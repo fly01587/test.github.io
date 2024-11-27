@@ -14,11 +14,15 @@
     <div style="width: 500px; height: 200;" id="reader"></div>
         <button onclick="getCameras()"> 开扫 </button>
         <button onclick="stop()"> 结束 </button>
+        <div id="content"></div>
+        <div id="content2"></div>
+
     <script>
+        const content = document.getElementById("content");
+        const content2 = document.getElementById("content2");
         function onScanSuccess(decodedText, decodedResult) {
     // Handle on success condition with the decoded text or result.
-    alert(decodedResult)
-    console.log(`Scan result: ${decodedText}`, decodedResult);
+             console.log(`Scan result: ${decodedText}`, decodedResult);
 }
 
     // var html5QrcodeScanner = new Html5QrcodeScanner(
@@ -35,6 +39,8 @@
           },
           (decodedText, decodedResult) => {
             // do something when code is read
+            content.innerHTML =  decodedText
+            content2.innerHTML =  decodedResult
             console.log('decodedText', decodedText)
             console.log('decodedResult', decodedResult)
             // this.$emit("goBack", decodedText)
