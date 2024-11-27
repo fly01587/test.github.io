@@ -12,7 +12,7 @@
         
     </div>
     <div style="width: 500px; height: 200;" id="reader"></div>
-        <button onclick="getCameras()"> 开扫 </button>
+        <button onclick="start()"> 开扫 </button>
         <button onclick="stop()"> 结束 </button>
         <div id="content"></div>
         <div id="content2"></div>
@@ -28,7 +28,7 @@
     // var html5QrcodeScanner = new Html5QrcodeScanner(
 	//     "reader", { fps: 10, qrbox: 250 });
     // html5QrcodeScanner.render(onScanSuccess);
-    let  html5QrCode = null
+   let  html5QrCode = new Html5Qrcode("reader")
     const start = () => {
         html5QrCode.start(
           // environment后置摄像头 user前置摄像头
